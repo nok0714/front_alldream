@@ -18,7 +18,7 @@ socket.onmessage = function (event) {
 
 function updateResults(results) {
     // 결과를 표시할 HTML 초기화
-    if (result[0] == "대기 중"){
+    if (results[0] == "대기 중"){
         teamContainer.innerHTML = "현재 투표 대기 중입니다"
         numContainer.innerHTML = "공연을 기다리는 중 ^_^"
     }

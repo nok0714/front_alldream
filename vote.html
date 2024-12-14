@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vote</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Container -->
+  <div class="max-w-4xl mx-auto p-6">
+    <h1 class="text-3xl font-bold text-black-600 text-center mb-8">2024 다드림제</h1>
+
+    <div class="bg-white shadow-xl rounded-lg p-6 mb-6">
+        <h2 id="voted-team" class="text-lg font-semibold text-gray-700 mb-4">WebSocket Server Connecting</h2>
+        <div id="voted-number" class="text-2xl font-bold">서버와 연결 중이니 기다려줘</div>
+    </div>
+
+    <!-- Code Input Section -->
+    <div class="bg-white shadow-xl rounded-lg p-6 mb-6">
+      <h2 class="text-lg font-semibold text-gray-700 mb-4">1. 투표코드를 입력해주세요</h2>
+      <input id="code-input" type="text" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4" placeholder="Enter your code">
+    </div>
+
+    <!-- Voting Options Section -->
+    <div class="bg-white shadow-xl rounded-lg p-6 mb-6">
+      <h2 class="text-lg font-semibold text-gray-700 mb-4">2. 마음에 드신다면 투표하세요</h2>
+      <div class="grid grid-cols-1 gap-4">
+        <button class="option-btn bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-green-700 focus:ring-2 focus:ring-blue-500" data-option="teamdata">투표하기</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="vote.js"></script>
+</body>
+</html>

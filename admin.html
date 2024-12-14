@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="container mx-auto py-8">
+    <h1 class="text-2xl font-bold text-center mb-4">Admin Panel</h1>
+
+    <div class="bg-white p-6 shadow-md rounded mb-4">
+      <h2 class="text-xl font-semibold mb-2">Generate Codes</h2>
+      <input id="count-input" type="number" class="border p-2 rounded w-full mb-2" placeholder="Number of codes">
+      <button id="generate-btn" class="bg-blue-500 text-white px-4 py-2 rounded">Generate</button>
+    </div>
+
+    <div class="bg-white p-6 shadow-md rounded mb-4">
+      <h2 class="text-xl font-semibold mb-2">Team Change</h2>
+      <div class="mb-2" id="teamsContainer"></div>
+      <button id="change-btn" class="bg-blue-500 text-white px-4 py-2 rounded">Change</button>
+    </div>
+
+    <div class="bg-white p-6 shadow-md rounded mb-4">
+      <h2 class="text-xl font-semibold mb-2">Existing Codes</h2>
+      <ul id="codes-list" class="space-y-1">
+        <!-- 투표 코드 목록이 여기에 추가됨 -->
+      </ul>
+      <button id="delete-btn" class="bg-red-500 text-white px-4 py-2 rounded mt-2">Delete Selected</button>
+    </div>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>

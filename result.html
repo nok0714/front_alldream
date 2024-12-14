@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실시간 다드림제</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Container -->
+  <div class="max-w-4xl mx-auto p-6">
+    <h1 class="text-3xl font-bold text-blue-600 text-center mb-8">실시간 집계 중</h1>
+
+    <!-- Results Section -->
+    <div id="results-section" class="bg-white shadow-xl rounded-lg p-6">
+      <div id="result-list" class="space-y-4">
+        <!-- 실시간 결과 표시 부분 -->
+      </div>
+      <button id="update-btn" class="bg-blue-500 w-full mt-2 px-4 py-2 rounded">Update</button>
+    </div>
+  </div>
+
+  <script src="result.js"></script>
+</body>
+</html>

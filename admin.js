@@ -30,7 +30,7 @@ generateBtn.addEventListener("click", () => {
     return;
   }
 
-  fetch("hhttps://api.ysji.xyz/api/generate", {
+  fetch("https://api.ysji.xyz/api/generate", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ count }),

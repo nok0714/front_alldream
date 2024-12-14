@@ -18,8 +18,14 @@ socket.onmessage = function (event) {
 
 function updateResults(results) {
     // 결과를 표시할 HTML 초기화
-    teamContainer.innerHTML = "현재 투표중 : " + results[0];
-    numContainer.innerHTML = results[1] + "표";
+    if (result[0] == "대기 중"){
+        teamContainer.innerHTML = "현재 투표 대기 중입니다"
+        numContainer.innerHTML = "공연을 기다리는 중 ^_^"
+    }
+    else {
+        teamContainer.innerHTML = "현재 투표중 : " + results[0];
+        numContainer.innerHTML = results[1] + "표";
+    }
 }
 
 optionButtons.forEach((button) => {

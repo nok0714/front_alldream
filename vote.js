@@ -1,4 +1,4 @@
-const socket = new WebSocket("ws://api.ysji.xyz");
+const socket = new WebSocket("ws://api.ysji.xyz:443");
 const teamContainer = document.getElementById("voted-team");
 const numContainer = document.getElementById("voted-number");
 const codeInput = document.getElementById("code-input");

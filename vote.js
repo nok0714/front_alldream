@@ -20,6 +20,7 @@ socket.onclose = (event) => {
     console.log("연결 끊어짐");
     teamContainer.innerHTML = "서버와의 연결이 끊어졌습니다"
     numContainer.innerHTML = "새로고침 해주세요!"
+    optionButtons.disabled = true
 };
 
 

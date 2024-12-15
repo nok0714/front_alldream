@@ -16,6 +16,13 @@ socket.onmessage = function (event) {
     }
 };
 
+socket.onclose = (event) => {
+    console.log("연결 끊어짐");
+    teamContainer.innerHTML = "서버와의 연결이 끊어졌습니다"
+    numContainer.innerHTML = "새로고침 해주세요!"
+};
+
+
 function updateResults(results) {
     // 결과를 표시할 HTML 초기화
     if (results[0] == "대기 중"){

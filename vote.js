@@ -2,7 +2,7 @@ const socket = new WebSocket("wss://api.ysji.xyz");
 const teamContainer = document.getElementById("voted-team");
 const numContainer = document.getElementById("voted-number");
 const codeInput = document.getElementById("code-input");
-const optionButtons = document.querySelectorAll(".option-btn");
+const optionButton = document.querySelector(".option-btn");
 
 socket.onopen = function () {
     console.log("WebSocket 연결됨.");
@@ -20,8 +20,8 @@ socket.onclose = (event) => {
     console.log("연결 끊어짐");
     teamContainer.innerHTML = "서버와의 연결이 끊어졌습니다"
     numContainer.innerHTML = "새로고침 해주세요!"
-    optionButtons.innerHTML = "서버와의 연결이 끊어졌습니다"
-    optionButtons.disabled = true
+    optionButton.innerHTML = "서버와의 연결이 끊어졌습니다"
+    optionButton.disabled = true
 };
 
 
@@ -30,39 +30,38 @@ function updateResults(results) {
     if (results[0] == "대기 중"){
         teamContainer.innerHTML = "현재 투표 대기 중입니다"
         numContainer.innerHTML = "공연을 기다리는 중 ^_^"
-        optionButtons.innerHTML = "투표 대기중"
-        optionButtons.disabled = true
+        optionButton.innerHTML = "투표 대기중"
+        optionButton.disabled = true
     }
     else {
         teamContainer.innerHTML = "현재 투표중 : " + results[0];
         numContainer.innerHTML = results[1] + "표";
-        optionButtons.disabled = false
-        optionButtons.innerHTML = "투표하기"
+        optionButton.disabled = false
+        optionButton.innerHTML = "투표하기"
     }
 }
 
-optionButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const code = codeInput.value.trim();
+optionButton.addEventListener("click", () => {
+    const code = codeInput.value.trim();
   
-      if (!code) {
+    if (!code) {
         alert("투표 코드를 먼저 입력해주세요");
         return;
-      }
+    }
   
-      fetch("https://api.ysji.xyz/api/vote", {
+    fetch("https://api.ysji.xyz/api/vote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ code }),
-      })
+    })
         .then((response) => response.json())
         .then((data) => {
-          if (data.message === "Vote successful") {
-            alert("투표 완료되었습니다");
-          } else {
-            alert("잘못되었거나 사용된 코드입니다");
-          }
+            if (data.message === "Vote successful") {
+                alert("투표 완료되었습니다");
+            } else {
+                alert("잘못되었거나 사용된 코드입니다");
+            }
         });
-    });
 });
+
   

@@ -20,6 +20,7 @@ socket.onclose = (event) => {
     console.log("연결 끊어짐");
     teamContainer.innerHTML = "서버와의 연결이 끊어졌습니다"
     numContainer.innerHTML = "새로고침 해주세요!"
+    optionButtons.innerHTML = "서버와의 연결이 끊어졌습니다"
     optionButtons.disabled = true
 };
 
@@ -29,10 +30,14 @@ function updateResults(results) {
     if (results[0] == "대기 중"){
         teamContainer.innerHTML = "현재 투표 대기 중입니다"
         numContainer.innerHTML = "공연을 기다리는 중 ^_^"
+        optionButtons.innerHTML = "투표 대기중"
+        optionButtons.disabled = true
     }
     else {
         teamContainer.innerHTML = "현재 투표중 : " + results[0];
         numContainer.innerHTML = results[1] + "표";
+        optionButtons.disabled = false
+        optionButtons.innerHTML = "투표하기"
     }
 }
 
@@ -41,7 +46,7 @@ optionButtons.forEach((button) => {
       const code = codeInput.value.trim();
   
       if (!code) {
-        alert("Please enter your vote code.");
+        alert("투표 코드를 먼저 입력해주세요");
         return;
       }
   
@@ -53,9 +58,9 @@ optionButtons.forEach((button) => {
         .then((response) => response.json())
         .then((data) => {
           if (data.message === "Vote successful") {
-            alert("Vote recorded successfully!");
+            alert("투표 완료되었습니다");
           } else {
-            alert("Invalid or already used code.");
+            alert("잘못되었거나 사용된 코드입니다");
           }
         });
     });

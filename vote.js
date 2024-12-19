@@ -35,7 +35,7 @@ function updateResults(results) {
     }
     else {
         teamContainer.innerHTML = "현재 투표중 : " + results[0];
-        numContainer.innerHTML = results[1] + "표";
+        numContainer.innerHTML = "현재 투표 가능 시간입니다!"
         optionButton.disabled = false
         optionButton.innerHTML = "투표하기"
     }
